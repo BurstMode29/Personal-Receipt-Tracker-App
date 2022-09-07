@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Personal Receipt Tracker</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/8e877c6729.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body style="background-color: rgb(104, 151, 250);"> 
+
+        <div class="DocSetup" id="DocSetup">
+            <h1 style="color: white; font-size: 20px; text-align: center;">Fill in Document</h1>
+            <div class="DocArea" style="height: 700px; width: 100%; background-color: white;">
+             <div style="display: flex;"><div style="background-color: rgb(255, 255, 255);height: 100px; width: 100px;display: flex;justify-content: center;align-items: center;"><img style="height: 120px; width: 100px;margin-top: 40px;" src="QuickDoc_Logo.png"></div><div style="background-color: rgb(255, 255, 255);height:100px;width: 290px; display: flex;justify-content: center;align-items: center;"><ul style="float: right;margin-left: 150px;list-style: none;"><li>Receipt</li><li>Date:01/01/2022</li><li>001</li></ul></div></div>
+             <div style="height: 50px;background-color: purple;"></div>
+             <div style="display: flex;"><div style="background-color: rgb(117, 106, 3);height: 150px; width: 200px;display: flex;justify-content: center;align-items: center;"><ul><li>From</li><li>Email</li><li>Address</li><li>Phone</li></ul></div><div style="background-color: rgb(255, 217, 0);height: 150px; width: 200px;display: flex;justify-content: center;align-items: center;"><ul><li>From</li><li>Email</li><li>Address</li><li>Phone</li></ul></div></div>
+             <div style="background-color: blue; height: 300px;"></div>
+             <div style="display: flex;"><div style="background-color: rgb(255, 0, 128);height: 100px; width: 290px;"></div><div style="background-color: blue;height: 100px; width: 100px; float: right;"></div></div>
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center;margin-top: 30px;"><button type="button" style="height: 50px; width: 150px; border-radius: 20px; border-style: none;">Print</button></div>
+        </div>
+
+        <div id="Loader" style="height: 100%; width:100%;position: absolute;z-index: 1;background-color: rgb(104, 151, 250);display: flex;justify-content: center;align-items: center;z-index: 5;">
+            <div class="loader"></div>
+            <img style="height: 120px; width: 100px; position: absolute;top: 380px;" src="QuickDoc_Logo.png">
+            <!--<div class="Sprite">
+                <img class="SpriteAnimation" src="PRT-SpriteSheet.png" alt="Sprite">
+            </div>-->
+        </div>
+        
+        <div id="SignUp" style="background-color: rgb(104, 151, 250); position:absolute;height: 100%;width: 100%;z-index: 3;">
+            <p style="text-align: center;font-size:30px;margin-top: 5%;font-weight: bold;color: white;">Sign Up</p>
+            <form style="text-align: center;margin-top: 20%;">
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none;" type="text" placeholder="Name" required><br>
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="text" placeholder="Surname" required><br>
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="email" placeholder="Email" required><br>
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="password" placeholder="Password" required><br>
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="password" placeholder="Repeat Password" required><br>
+                <input onclick="Submit()" style="height: 40px;width:120px;margin-bottom: 50px;border-radius: 20px;background-color: rgb(155, 230, 81);border-style: none;font-size: 15px;font-weight: bold;" type="submit"><br>
+                <button style="height: 40px;width:300px;margin-bottom: 50px;font-size: 15px;font-weight: bold;align-items: center;" type="button"><i style="margin-right: 20px;align-items: center;" class="fa-brands fa-google"></i>Sign Up with Google</button>
+            </form>
+        </div>
+
+        <div id="Login" style="background-color: rgb(104, 151, 250); position:absolute;height: 100%;width: 100%;z-index: 3;">
+            <p style="text-align: center;font-size:30px;margin-top: 5%;font-weight: bold;color: white;">Login</p>
+            <form style="text-align: center;margin-top: 20%;">
+
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="email" placeholder="Email" required><br>
+                <input style="margin-bottom: 50px;width: 300px;height: 40px;border-radius: 15px;border-style: none" type="password" placeholder="Password" required><br>
+
+                <input onclick="SignIn()" style="height: 40px;width:120px;margin-bottom: 50px;border-radius: 20px;background-color: rgb(155, 230, 81);border-style: none;font-size: 15px;font-weight: bold;" type="submit"><br>
+                <button style="height: 40px;width:300px;margin-bottom: 50px;font-size: 15px;font-weight: bold;align-items: center;" type="button"><i style="margin-right: 20px;align-items: center;" class="fa-brands fa-google"></i>Sign Up with Google</button>
+            </form>
+        </div>
+
+        <div id="Register" style="background-color: rgb(104, 151, 250); height: 100%; width: 100%;position: absolute;z-index: 4;">
+            <p style="background-color: transparent;text-align: center; font-size: 30px;color: white;font-weight: bold;">Welcome to your very own personal receipt tracker!</p><br>
+            <div style="background-color: transparent;text-align: center;margin-top: 60%;">
+                <button onclick="signUp()" id="SignUp" type="button" style="height: 50px; width:150px; border-radius: 40px; border-style: none;margin-bottom: 50px;font-size: 20px;background-color: rgb(155, 230, 81);font-weight: bold;">Sign Up</button>
+                <p style="background-color: transparent;font-size: 20px;font-weight: bold;color: white;">OR</p>
+                <button onclick="Login()" type="button" style="height: 50px; width: 150px; border-radius: 40px;border-style: none;margin-top: 50px;font-size: 20px;background-color: rgb(155, 230, 81); font-weight: bold;">Login</button>
+            </div>
+        </div>
+
+
+    <div id="Main">
+        <div class="MenuContent" id="menuContent" >
+            <div style="background-color: transparent; margin: 5px; display: flex; justify-content: center; justify-content: space-between;"><i onclick="closeMenu()" id="Menu" style="font-size: 10vw; color: rgb(0, 0, 0); background-color: transparent;"   class="fa-solid fa-bars"></i><p style="background-color: transparent; font-size: 30px; margin-right: 80px; font-weight: bold;">Menu</p></div><br>
+            <div style="margin-top:50px; background-color: transparent;">
+                <a href="#">Markets</a>
+                <a href="#">History</a>
+                <a href="#">Settings</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+
+        <div class="menu"><i onclick="openMenu()" id="Menu" style="font-size: 10vw; color: rgb(0, 0, 0); margin: 5px;"   class="fa-solid fa-bars"></i> 
+            
+            <span id="Switch" class="switch">
+                <input type="checkbox" id="switcher">
+                <label for="switcher"></label>
+            </span>
+
+        </button></div></div>
+        
+       
+    
+        <div style="display: flex; justify-content:center; margin-top: 100px;align-items: center;"><p style="font-size: 30px;align-items: center; color: white; text-align: center;">Hit the button to process your transaction!</p></div>
+
+        <div style="display: flex;justify-content:center;margin-top: 150px;"><button type="button" onclick="DocGen()" style="height: 70px; width:300px;background-color: white;border-style: none;border-radius: 50px; font-size: 20px; font-weight: bold;">Generate Document</button></div>
+    
+    
+        
+    </div>   
+
+
+
+
+        
+
+        <script src="main.js" async defer></script>
+    </body>
+
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/*switch*/
+
+  .switch {
+    position: relative;
+    margin: 5px 5px;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+  }
+
+  .switch input{
+    appearance: none;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    background: rgb(112, 112, 112);
+    outline: none;
+  }
+
+  .switch input::before,
+  .switch input::after {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bolder;
+  }
+
+  .switch input::before {
+    content: "SELL";
+    left: 20px;
+  }
+
+  .switch input::after {
+    content: "BUY";
+    right: 20px;
+  }
+
+  .switch input:checked {
+    background: #35f345;
+  }
+
+  .switch label {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    width: 50px;
+    border-radius: 20px;
+  }
+
+  .switch input{
+    transition: 0.25s;
+  }
+
+  .switch input:checked::after,
+  .switch input:checked::before {
+    color: white;
+    transition: color 0.5s;
+  }
+
+  .switch input:checked+label{
+    left: 10px;
+    right: 100px;
+    background: black;
+    transition: left 0.5s, right 0.4s 0.2s;
+  }
+
+  .switch input:not(:checked){
+      background: black;
+      transition: background 0.4s;
+  }
+
+  .switch input:not(:checked)::before{
+    color: white;
+    transition: color 0.5s;
+  }
+
+  .switch input:not(:checked)::after{
+      color: black;
+      transition: color 0.5s 0.2s;
+  }
+
+  .switch input:not(:checked)+label{
+    left: 70px;
+    right: 10px;
+    background: #35f345;
+    transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
+  }
+
+
+/*switch*/
+
+
+.MenuContent {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    position: absolute;
+    width: 70%;
+    display:none;
+}
+
+.MenuContent a{
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration-line: none;
+    color: black;
+}
+
+.loader {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid #35f345;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .Sprite {
+    position: absolute;
+    width: 175px;
+    overflow: hidden;
+  }
+
+  .SpriteAnimation {
+    animation: moveSpritesheet 1s steps(8) infinite;
+  }
+
+  @keyframes moveSpritesheet {
+    from {
+      transform: translate3d(0px,0,0)
+    }
+    to {
+      transform: translate3d(-100%,0,0)
+    }
+  }
+
+  .DocSetup {
+    display: none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(104, 151, 250);
+  }
