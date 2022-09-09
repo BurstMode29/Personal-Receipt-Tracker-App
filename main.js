@@ -12,6 +12,18 @@ function closeMenu() {
       return document.getElementById("Switch").style.display = "initial"
     }   
 }
+
+// Market Menu.....
+function Market() {
+  const btn = document.getElementById("MarketMen").style.display = "initial";
+}
+
+function closeMarket() {
+  const btn = document.getElementById("MarketMen").style.display = "none";
+}
+// Market Menu.....
+
+
 // Menu
 
 // RegForm
